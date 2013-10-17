@@ -49,7 +49,7 @@ class ApacheHttpClient(val socketTimeout: Int = ApacheHttpClient.DefaultSocketTi
     cm
   }
 
-  private val httpClient: AbstractHttpClient = {
+  val httpClient: AbstractHttpClient = {
     val client = new DefaultHttpClient(connManager)
     val httpParams = client.getParams
     HttpConnectionParams.setConnectionTimeout(httpParams, connectionTimeout)
